@@ -1,4 +1,4 @@
-#import "HWPHello.h"
+#import "BEMLaunchNative.h"
 
 @implementation BEMLaunchNative
 
