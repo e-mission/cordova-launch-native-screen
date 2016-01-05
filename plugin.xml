@@ -9,20 +9,20 @@
   <license>Modified BSD license</license>
 
   <engines>
-    <engine name="cordova" version=">=5.0.0"/>
+    <engine name="cordova" version=">=3.6.0"/>
   </engines>
 
   <asset src="www/launchnative.js" target="js/launchnative.js"/>
 
-  <js-module src="www/launchnative.js" name="bemlaunchnative">
-    <clobbers target="bemlaunchnative" />
+  <js-module src="www/launchnative.js" name="launchnative">
+    <clobbers target="cordova.plugins.BEMLaunchNative" />
   </js-module>
 
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="LaunchNative">
-        <param name="android-package" value="edu.berkeley.eecs.emission.cordova.launchnative"/>
+        <param name="android-package" value="edu.berkeley.eecs.emission.cordova.launchnative.LaunchNative"/>
       </feature>
     </config-file>
 
