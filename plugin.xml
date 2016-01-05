@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="edu.berkeley.eecs.emission.cordova.launchnative"
+        version="0.0.1">
+
+  <name>LaunchNative</name>
+  <description>Launch native activities or View Controllers from the same app</description>
+  <author>K. Shankari (shankari@eecs.berkeley.edu)</author>
+  <license>Modified BSD license</license>
+
+  <engines>
+    <engine name="cordova" version=">=5.0.0"/>
+  </engines>
+
+  <asset src="www/launchnative.js" target="js/launchnative.js"/>
+
+  <js-module src="www/launchnative.js" name="bemlaunchnative">
+    <clobbers target="bemlaunchnative" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="LaunchNative">
+        <param name="android-package" value="edu.berkeley.eecs.emission.cordova.launchnative"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/LaunchNative.java" target-dir="src/edu/berkeley/eecs/emission/cordova/launchnative"/>
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/*">
+      <feature name="LaunchNative">
+        <param name="ios-package" value="BEMLaunchNative" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/BEMLaunchNative.h" target-dir="BEMLaunchNativePlugin"/>
+    <source-file src="src/ios/BEMLaunchNative.m" target-dir="BEMLaunchNativePlugin"/>
+  </platform>
+</plugin>
